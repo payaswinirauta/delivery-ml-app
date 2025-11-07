@@ -1,9 +1,11 @@
 from fastapi import FastAPI, Form
 from fastapi.middleware.cors import CORSMiddleware
 import joblib
+import os
 
 # Model load karo
-model = joblib.load("backend/delivery_rating_model.pkl")
+model_path = os.path.join(os.path.dirname(__file__), "delivery_rating_model.pkl")
+model = joblib.load(model_path)
 
 app = FastAPI()
 
@@ -36,3 +38,4 @@ def predict(
     ]]
     prediction = model.predict(X)[0]
     return {"predicted_rating": round(prediction, 2)}
+
