@@ -47,7 +47,8 @@ delivery-ml-app/
 
 
 ---
-
+---
+```
 ## 🧰 Installation (Run Locally)
 ```bash
 git clone https://github.com/payaswinirauta/delivery-ml-app.git
@@ -70,8 +71,7 @@ AI + FastAPI Developer | Machine Learning Enthusiast
 
 ⭐ If you like this project, give it a star on GitHub!
 
-yaml
-Copy code
+```
 
 ---
 
