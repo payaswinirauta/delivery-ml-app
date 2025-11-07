@@ -75,12 +75,4 @@ AI + FastAPI Developer | Machine Learning Enthusiast
 
 ---
 
-### 🔧 Next Step:
-1. Go to your repo → click **“Add a README”**  
-2. Paste the above content  
-3. Commit changes ✅  
 
----
-
-Chaaho to main is README ka **Render Live Deployment version** bhi bana du jisme “🌍 Live Demo” section add hoga (after you deploy it).  
-Batao, deploy hone ke baad wo version chahiye kya?
