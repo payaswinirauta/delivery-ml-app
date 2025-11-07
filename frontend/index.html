@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Rating Predictor</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 40px;
+      background: #f3f6fa;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+    input, select, button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📦 Predict Customer Rating</h2>
+  <form id="ratingForm">
+    <label>Product Weight</label>
+    <input type="number" step="0.1" name="product_weight" required>
+
+    <label>Shipment Mode</label>
+    <select name="shipment_mode">
+      <option>Flight</option>
+      <option>Road</option>
+      <option>Ship</option>
+    </select>
+
+    <label>Product Importance</label>
+    <select name="product_importance">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+
+    <label>On-time Delivery?</label>
+    <select name="on_time_delivery">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  <h3 id="result"></h3>
+
+  <script>
+    const form = document.getElementById("ratingForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch("http://127.0.0.1:8000/predict", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      document.getElementById("result").innerText =
+        "Predicted Rating: ⭐ " + data.predicted_rating;
+    });
+  </script>
+</body>
+</html>
