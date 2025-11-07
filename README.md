@@ -30,7 +30,7 @@ A smart **Machine Learning web app** that predicts **customer satisfaction ratin
 3. Model instantly returns a ⭐ rating (1–5).  
 
 ---
-
+```
 ## 📁 Project Structure
 delivery-ml-app/
 │
@@ -45,8 +45,6 @@ delivery-ml-app/
 │
 └── requirements.txt # Dependencies
 
-yaml
-Copy code
 
 ---
 
